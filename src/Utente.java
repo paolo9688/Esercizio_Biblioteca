@@ -55,11 +55,11 @@ public class Utente {
     }
 
     public void stampaUtente() {
-        System.out.println("Utente: nome " + getNome()
-                               + ", cognome " + getCognome()
-                               + ", email " + getEmail()
-                               + ", password " + getPassword()
-                               + ", ID " + getId());
+        System.out.println("Utente: nome " + this.nome
+                + ", cognome " + this.cognome
+                + ", email " + this.email
+                + ", password " + this.password
+                + ", ID " + this.id);
     }
 
     public void login(String email, String password) {

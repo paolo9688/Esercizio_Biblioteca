@@ -1,19 +1,37 @@
+import java.time.LocalDate;
 import java.util.*;
 
 public class Biblioteca implements Notifica {
 
     private ArrayList<Pubblicazione> pubblicazioni;
     private HashSet<Utente> utenti;
-    private HashMap<Utente, Pubblicazione> prenotazioniUtente;
+    private ArrayList <Prenotazione> prenotazioniUtente;
 
     public Biblioteca() {
         this.pubblicazioni = new ArrayList<>();
         this.utenti = new HashSet<>();
-        this.prenotazioniUtente = new HashMap<>();
+        this.prenotazioniUtente = new ArrayList<>();
     }
 
     public void aggiungiPubblicazione(Pubblicazione pubblicazione) {
         pubblicazioni.add(pubblicazione);
+    }
+
+    public void aggiungiPrenotazione(Utente utente, Pubblicazione pubblicazione) {
+        Random random = new Random();
+        Integer idRandom = random.nextInt(0, 100);
+        Prenotazione prenotazione = new Prenotazione(idRandom,utente,pubblicazione, LocalDate.now());
+        prenotazioniUtente.add(prenotazione);
+    }
+
+    public void annullaPrenotazione(Prenotazione prenotazione) {
+        prenotazioniUtente.remove(prenotazione);
+    }
+
+    public void mostraPrenotazione() {
+        for (Prenotazione prenotazione : prenotazioniUtente) {
+            prenotazione.stampaPrenotazione();
+        }
     }
 
     public void mostraCatalogo() {
@@ -97,17 +115,9 @@ public class Biblioteca implements Notifica {
         System.out.println("\n");
     }
 
-    public void prenotaPubblicazione(Pubblicazione pubblicazione, Utente utente) {
+    /*public void prenotaPubblicazione(Pubblicazione pubblicazione, Utente utente) {
         prenotazioniUtente.put(utente, pubblicazione);
-    }
-
-    public void mostraPrenotazioni() {
-        System.out.println("Prenotazioni:");
-        for (Map.Entry<Utente, Pubblicazione> pubblicazioneEntry : prenotazioniUtente.entrySet()) {
-            System.out.println(pubblicazioneEntry.getKey());
-        }
-        System.out.println("\n");
-    }
+    }*/
 
     public void notificaUtente(Utente utente, Notifica notifica) {
         // Notifica un utente di una prenotazione disponibile

@@ -40,11 +40,11 @@ public class Main {
         biblioteca.effettuaPrestito(giornale);
         biblioteca.restituisciPubblicazione(giornale);
 
-        biblioteca.prenotaPubblicazione(libro, utente1);
-        biblioteca.prenotaPubblicazione(rivista, utente2);
-        biblioteca.prenotaPubblicazione(giornale, utente3);
-        biblioteca.prenotaPubblicazione(documentoStorico, utente4);
+        biblioteca.aggiungiPrenotazione(utente1, libro);
+        biblioteca.aggiungiPrenotazione(utente2, rivista);
+        biblioteca.aggiungiPrenotazione(utente3, giornale);
+        biblioteca.aggiungiPrenotazione(utente4, documentoStorico);
 
-        biblioteca.mostraPrenotazioni();
+        biblioteca.mostraPrenotazione();
     }
 }

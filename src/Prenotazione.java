@@ -46,15 +46,16 @@ public class Prenotazione {
         this.dataPrenotazione = dataPrenotazione;
     }
 
-    @Override
-    public String toString() {
-        return "Prenotazione{" +
-                "id=" + id +
-                ", utente=" + utente +
-                ", pubblicazione=" + pubblicazione +
-                ", dataPrenotazione=" + dataPrenotazione +
-                '}';
+    public void stampaPrenotazione() {
+        System.out.println("\u001B[32mPrenotazione: - ID "+ this.id
+                + ", data di prenotazione " + this.dataPrenotazione + "\u001B[0m");
+        this.utente.stampaUtente();
+        System.out.println("");
+        this.pubblicazione.mostraPubblicazione();
+        System.out.println("");
     }
+
+
 
     public void annullaPrenotazione(Prenotazione prenotazione) {
         // annulla una prenotazione
