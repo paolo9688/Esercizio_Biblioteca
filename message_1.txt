@@ -1,0 +1,33 @@
+NUOVI REQUISITI
+
+    Gestione Utenti: Implementare un sistema di registrazione e autenticazione per gli utenti.
+    Prenotazioni: Consentire agli utenti di prenotare pubblicazioni non disponibili.
+    Notifiche: Implementare un sistema di notifiche per avvisare gli utenti quando una pubblicazione prenotata diventa disponibile.
+    Storico Prestiti: Tracciare la storia dei prestiti per ogni utente.
+    Reportistica: Generare report sulla frequenza di prestito delle pubblicazioni e sugli utenti più attivi.
+
+NUOVE CLASSI E INTERFACCE
+
+    Utente: Classe che rappresenta un utente registrato.
+    Prenotazione: Classe che rappresenta una prenotazione di una pubblicazione.
+    Notifica: Interfaccia che definisce il comportamento di notifica.
+    StoricoPrestiti: Classe che traccia la storia dei prestiti per ogni utente.
+
+NUOVI METODI E ATTRIBUTI
+
+    Biblioteca:
+        registraUtente(Utente utente): Registra un nuovo utente.
+        prenotaPubblicazione(Pubblicazione pubblicazione, Utente utente): Prenota una pubblicazione per un utente.
+        notificaUtente(Utente utente, Notifica notifica): Notifica un utente di una prenotazione disponibile.
+    Pubblicazione:
+        getStato(): Restituisce lo stato della pubblicazione (disponibile, prestatto, smarrito).
+    Utente:
+        getPrenotazioni(): Restituisce la lista delle prenotazioni dell'utente.
+        getStoricoPrestiti(): Restituisce la storia dei prestiti dell'utente.
+
+FUNZIONALITÀ AVANZATE
+
+    Ricerca avanzata: Implementare una ricerca avanzata che consente di cercare pubblicazioni per titolo, autore, categoria, ecc.
+    Gestione prestiti: Implementare un sistema di gestione prestiti che consente di effettuare prestiti, restituire pubblicazioni e tracciare la storia dei prestiti.
+    Tracciamento storico: Implementare un sistema di tracciamento storico che consente di tracciare la storia dei prestiti per ogni utente.
+    Reportistica: Implementare un sistema di reportistica che consente di generare report sulla frequenza di prestito delle pubblicazioni e sugli utenti più attivi.

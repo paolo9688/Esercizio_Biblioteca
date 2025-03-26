@@ -1,0 +1,68 @@
+Sistema di Gestione Biblioteca - Dettagli
+
+Gestione Utenti
+
+    Classe Utente: rappresenta un utente registrato
+    Attributi:
+        id: identificatore univoco dell'utente
+        nome: nome dell'utente
+        cognome: cognome dell'utente
+        email: indirizzo email dell'utente
+        password: password dell'utente
+    Metodi:
+        registraUtente(Utente utente): registra un nuovo utente
+        login(String email, String password): effettua il login dell'utente
+        getPrenotazioni(): restituisce la lista delle prenotazioni dell'utente
+        getStoricoPrestiti(): restituisce la storia dei prestiti dell'utente
+
+Prenotazioni
+
+    Classe Prenotazione: rappresenta una prenotazione di una pubblicazione
+    Attributi:
+        id: identificatore univoco della prenotazione
+        utente: utente che ha effettuato la prenotazione
+        pubblicazione: pubblicazione prenotata
+        dataPrenotazione: data di prenotazione
+    Metodi:
+        prenotaPubblicazione(Pubblicazione pubblicazione, Utente utente): prenota una pubblicazione per un utente
+        annullaPrenotazione(Prenotazione prenotazione): annulla una prenotazione
+
+Notifiche
+
+    Interfaccia Notifica: definisce il comportamento di notifica
+    Metodi:
+        notificaUtente(Utente utente, Notifica notifica): notifica un utente di una prenotazione disponibile
+
+Storico Prestiti
+
+    Classe StoricoPrestiti: traccia la storia dei prestiti per ogni utente
+    Attributi:
+        utente: utente a cui appartiene la storia dei prestiti
+        prestiti: lista dei prestiti effettuati dall'utente
+    Metodi:
+        aggiungiPrestito(Prestito prestito): aggiunge un prestito alla storia dei prestiti dell'utente
+        getPrestiti(): restituisce la lista dei prestiti effettuati dall'utente
+
+Ricerca Avanzata
+
+    Metodi:
+        cercaPubblicazioni(String titolo, String autore, String categoria): cerca pubblicazioni per titolo, autore, categoria
+        cercaPubblicazioniPerUtente(Utente utente): cerca pubblicazioni prenotate o prestate dall'utente
+
+Gestione Prestiti
+
+    Metodi:
+        effettuaPrestito(Pubblicazione pubblicazione, Utente utente): effettua un prestito di una pubblicazione per un utente
+        restituisciPubblicazione(Pubblicazione pubblicazione, Utente utente): restituisce una pubblicazione prestata dall'utente
+
+Tracciamento Storico
+
+    Metodi:
+        aggiungiPrestito(Prestito prestito): aggiunge un prestito alla storia dei prestiti dell'utente
+        getPrestiti(): restituisce la lista dei prestiti effettuati dall'utente
+
+Reportistica
+
+    Metodi:
+        generaReportPubblicazioni(): genera un report sulla frequenza di prestito delle pubblicazioni
+        generaReportUtenti(): genera un report sugli utenti più attivi
