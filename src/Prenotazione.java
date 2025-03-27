@@ -47,17 +47,11 @@ public class Prenotazione {
     }
 
     public void stampaPrenotazione() {
-        System.out.println("\u001B[32mPrenotazione: - ID "+ this.id
+        System.out.println("\u001B[32mPrenotazione: - ID " + this.id
                 + ", data di prenotazione " + this.dataPrenotazione + "\u001B[0m");
         this.utente.stampaUtente();
         System.out.println("");
         this.pubblicazione.mostraPubblicazione();
         System.out.println("");
-    }
-
-
-
-    public void annullaPrenotazione(Prenotazione prenotazione) {
-        // annulla una prenotazione
     }
 }

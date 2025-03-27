@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Utente {
 
     private Integer id;
@@ -63,14 +65,18 @@ public class Utente {
     }
 
     public void login(String email, String password) {
-        // Effettua il login dell'utente
+        if (Objects.equals(email, this.getEmail()) && Objects.equals(password, this.getPassword())) {
+            System.out.println("Utente loggato correttamente");
+        } else {
+            System.out.println("Errore: email o password errate");
+        }
     }
 
-    /*public List getPrenotazioni() {
-        // Restituisce la lista delle prenotazioni dell'utente
+    public void getPrenotazioni() {
+
     }
 
-    public List getStoricoPrestiti() {
+    /*public List getStoricoPrestiti() {
         // Restituisce la storia dei prestiti dell'utente
     }*/
 }

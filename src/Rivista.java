@@ -26,7 +26,7 @@ public class Rivista extends Pubblicazione implements Prestabile, Ricercabile{
     @Override
     public void mostraPubblicazione() {
         super.mostraPubblicazione();
-        System.out.println("Stato: " + stato);
+        System.out.println("Stato: " + this.stato);
     }
 
     @Override

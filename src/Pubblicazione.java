@@ -67,12 +67,12 @@ public abstract class Pubblicazione {
     }
 
     public void mostraPubblicazione() {
-        System.out.println("Pubblicazione: nome " + nome +
-                " - data di pubblicazione " + dataPubblicazione +
-                " - genere " + genere +
-                " - ID " + id +
-                " - titolo " + titolo +
-                " - categoria " + categoria);
+        System.out.println("Pubblicazione: nome " + this.nome +
+                ", data di pubblicazione " + this.dataPubblicazione +
+                ", genere " + this.genere +
+                ", ID " + this.id +
+                ", titolo " + this.titolo +
+                ", categoria " + this.categoria);
     }
 
     public abstract void getDettagliSpecifici();

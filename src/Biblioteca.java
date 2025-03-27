@@ -5,12 +5,16 @@ public class Biblioteca implements Notifica {
 
     private ArrayList<Pubblicazione> pubblicazioni;
     private HashSet<Utente> utenti;
-    private ArrayList <Prenotazione> prenotazioniUtente;
+    private ArrayList<Prenotazione> prenotazioniUtente;
 
     public Biblioteca() {
         this.pubblicazioni = new ArrayList<>();
         this.utenti = new HashSet<>();
         this.prenotazioniUtente = new ArrayList<>();
+    }
+
+    public ArrayList<Prenotazione> getPrenotazioniUtente() {
+        return prenotazioniUtente;
     }
 
     public void aggiungiPubblicazione(Pubblicazione pubblicazione) {
@@ -24,8 +28,22 @@ public class Biblioteca implements Notifica {
         prenotazioniUtente.add(prenotazione);
     }
 
-    public void annullaPrenotazione(Prenotazione prenotazione) {
-        prenotazioniUtente.remove(prenotazione);
+    public void annullaPrenotazione(Integer idPrenotazione) {
+        int contatore = 0;
+
+        for (Prenotazione prenotazione : prenotazioniUtente) {
+            if (prenotazione.getId().equals(idPrenotazione)) {
+                contatore++;
+                prenotazioniUtente.remove(prenotazione);
+                System.out.println("La seguente prenotazione: ");
+                prenotazione.stampaPrenotazione();
+                System.out.println("è stata annullata con successo");
+            }
+        }
+
+        if (contatore == 0) {
+            System.out.println("\u001B[47m" + "\u001B[30m" + "Attenzione: non è stata trovata alcuna prenotazione con codice id = " + idPrenotazione + "\u001B[0m" + "\u001B[40m");
+        }
     }
 
     public void mostraPrenotazione() {
@@ -110,7 +128,7 @@ public class Biblioteca implements Notifica {
     public void mostraUtenti() {
         System.out.println("Utenti registrati:");
         for (Utente utente : utenti) {
-            System.out.println(utente.toString());
+            utente.stampaUtente();
         }
         System.out.println("\n");
     }

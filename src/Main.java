@@ -26,7 +26,6 @@ public class Main {
         biblioteca.registraUtente(utente4);
 
         biblioteca.mostraCatalogo();
-
         biblioteca.mostraUtenti();
 
         //biblioteca.ricercaPubblicazioni();
@@ -46,5 +45,9 @@ public class Main {
         biblioteca.aggiungiPrenotazione(utente4, documentoStorico);
 
         biblioteca.mostraPrenotazione();
+
+        biblioteca.annullaPrenotazione(12);
+
+        utente1.login("mario.rossi@example.com", "mariorossi");
     }
 }

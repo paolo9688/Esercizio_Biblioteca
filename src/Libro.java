@@ -50,7 +50,7 @@ public class Libro extends Pubblicazione implements Prestabile, Ricercabile{
     @Override
     public void mostraPubblicazione() {
         super.mostraPubblicazione();
-        System.out.println("Autore: " + autore + ", isbn: " + isbn + ", stato: " + stato);
+        System.out.println("Autore: " + this.autore + ", isbn: " + this.isbn + ", stato: " + this.stato);
     }
 
     @Override
